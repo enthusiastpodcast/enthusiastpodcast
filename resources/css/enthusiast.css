@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'Knewave';
-    src: url('knewave-regular-webfont.woff2') format('woff2'),
-        url('knewave-regular-webfont.woff') format('woff');
+    src: url('/resources/fonts/knewave-regular-webfont.woff2') format('woff2'),
+        url('/resources/fonts/knewave-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
