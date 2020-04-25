@@ -1,2 +1,4 @@
 name: Enthusiast!
 markdown: kramdown
+
+theme: jekyll-theme-cayman
