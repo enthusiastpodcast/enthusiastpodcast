@@ -1,2 +1,8 @@
-name: Enthusiast!
+# Site settings
+title: Enthusiast!
+email: contact@markbramhill.com
+url: "https://enthusiastpodcast.com"
+
+# Build settings
 markdown: kramdown
+permalink: /episodes/:title/

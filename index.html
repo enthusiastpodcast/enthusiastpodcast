@@ -1,109 +1,19 @@
-<!doctype html>
+---
+layout: default
+title: Enthusiast
+---
 
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-
-    <title>{{ page.title }}</title>
-
-    <meta name="description" content="Enthusiast Podcast">
-    <meta name="author" content="Mark Bramhill">
-    <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="/resources/css/reset.css">
-    <link rel="stylesheet" href="/resources/css/enthusiast.css">
-
-</head>
-
-<body>
-    <div class="content">
-        <div class="nav">
-            <a href="/"><img src="/images/enthusiast.png" alt="'Enthusiast!' in sign painter lettering"></a>
-            <a class="nav_item" href="subscribe.html">SUBSCRIBE</a>
-            <a class="nav_item" href="about.html">ABOUT</a>
-        </div>
-
-        <div class="episode">
-            <a href="fish_sauce.html">
-                <div class="image_container">
-                    <img src="/images/fish_sauce.png" alt="A bottle of Red Boat fish sauce">
-                </div>
-                <div class="title_container">
-                    NEVEN MRGAN:<br>
-                    FISH SAUCE
-                </div>
-            </a>
-        </div>
-
-        <div class="episode" id="landscape">
-            <a href="#">
-                <div class="image_container">
-                    <img src="/images/concert_hall_landscape.png">
-                </div>
-                <div class="title_container">
-                    KATE WAGNER:<br>
-                    CONCERT HALLS
-                </div>
-            </a>
-        </div>
-
-        <div class="episode">
-            <a href="#">
-                <div class="image_container">
-                    <img src="/images/music_video.png">
-                </div>
-                <div class="title_container">
-                    MOOJ ZADIE:<br>
-                    MUSIC VIDEOS
-                </div>
-            </a>
-        </div>
-
-        <div class="episode">
-            <a href="#">
-                <div class="image_container">
-                    <img src="/images/astrology.png">
-                </div>
-                <div class="title_container">
-                    <div class="name">CHER VINCENT:</div>
-                    <div class="topic">ASTROLOGY</div>
-                </div>
-            </a>
-        </div>
-
-        <div class="episode">
-            <a href="dnd.html">
-                <div class="image_container">
-                    <img src="/images/d20.png">
-                </div>
-                <div class="title_container">
-                    SHANE KELLY:<br>
-                    D&amp;D
-                </div>
-            </a>
-        </div>
-
-        <div class="episode">
-            <a href="#">
-                <div class="image_container">
-                    <img src="/images/pink_pearl.png">
-                </div>
-                <div class="title_container">
-                    ERIKA JANIK:<br>
-                    APPLES
-                </div>
-            </a>
-        </div>
-
-        <div class="footer">
-            <a href="https://twitter.com/EnthusiastFM"><img class="social svg" src="twitter.svg" style="color: white;"></a>
-            <a href="https://instagram.com/EnthusiastFM"><img class="social svg" src="instagram.svg"></a>
-        </div>
-
-    </div>
-
-</body>
-
-</html>
+    {% for post in site.posts %}
+            <div class="episode" {% if post.landscape == 'y' %}id="landscape" {% endif %}>
+                <a href="{{post.url}}">
+                    <div class="image_container">
+                        <img src="/resources/images/{{post.image}}" alt="{{post.alt}}">
+                    </div>
+                    <div class="title_container">
+                        {{post.name | upcase}}:<br>
+                        {{post.topic | upcase}}
+                    </div>
+                </a>
+            </div>
+            
+    {% endfor %}
